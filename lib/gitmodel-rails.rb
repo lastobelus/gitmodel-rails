@@ -17,11 +17,12 @@ module GitmodelRails
         GitModel.memcache_servers   = Array.wrap gitmodel_config.fetch("gitmodel", nil).try(:fetch, "memcache_servers", nil)
         GitModel.memcache_namespace = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "memcache_namespace", GitModel.git_user_email)
       
-        GitModel.db_root        = Rails.root.join(GitModel.db_root)
+        GitModel.db_root        = "#{Rails.root.join(GitModel.db_root)}"
       
         unless File.exist?(GitModel.db_root)
           GitModel.create_db!
         end
+      
       end
       
     end

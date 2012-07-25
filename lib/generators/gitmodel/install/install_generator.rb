@@ -5,7 +5,7 @@ module Gitmodel
       def create_config
         create_file(Rails.root.join("config", "gitmodel.yml")) do
 <<-eos
-git:
+gitmodel:
   db_root:   db/gitmodel
   default_branch: master
 
