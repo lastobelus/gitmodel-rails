@@ -19,9 +19,14 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
+    "README.md",
     "Rakefile",
     "VERSION",
+    "gitmodel-rails.gemspec",
+    "lib/generators/gitmodel/install/install_generator.rb",
+    "lib/generators/gitmodel/model/model_generator.rb",
     "lib/gitmodel-rails.rb"
   ]
   s.homepage = "http://github.com/mcasimir/gitmodel-rails"
