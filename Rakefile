@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "gitmodel-rails"
   gem.homepage = "http://github.com/mcasimir/gitmodel-rails"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A Rails gem that integrates Gitmodel (https://github.com/pauldowman/gitmodel) with Ruby on Rails}
+  gem.description = %Q{A Rails gem that integrates Gitmodel (https://github.com/pauldowman/gitmodel) with Ruby on Rails}
   gem.email = "maurizio.cas@gmail.com"
   gem.authors = ["mcasimir"]
   # dependencies defined in Gemfile
