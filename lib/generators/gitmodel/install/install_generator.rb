@@ -3,7 +3,7 @@ module Gitmodel
       source_root File.expand_path('../templates', __FILE__)
 
       def create_config
-        create_file(Rails.root.join("config", "gitmodel.yml") do
+        create_file(Rails.root.join("config", "gitmodel.yml")) do
 <<-eos
 git:
   db_root:   db/gitmodel
