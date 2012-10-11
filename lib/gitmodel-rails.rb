@@ -11,6 +11,8 @@ module GitmodelRails
         gitmodel_config         = YAML.load_file(gitmodel_config_file)
         gitmodel_config         = gitmodel_config.is_a?(Hash) ? gitmodel_config : {}
         GitModel.db_root        = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "db_root", GitModel.db_root)
+        GitModel.serializer     = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "db_root", GitModel.serializer)
+        GitModel.serializer     = GitModel.serializer.constantize if GitModel.serializer.kind_of?(String)
         GitModel.default_branch = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "default_branch", GitModel.default_branch)
         GitModel.git_user_name  = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "git_user_name", GitModel.git_user_name)
         GitModel.git_user_email = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "git_user_email", GitModel.git_user_email)
