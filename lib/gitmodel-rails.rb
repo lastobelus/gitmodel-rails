@@ -14,7 +14,8 @@ module GitmodelRails
         GitModel.default_branch = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "default_branch", GitModel.default_branch)
         GitModel.git_user_name  = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "git_user_name", GitModel.git_user_name)
         GitModel.git_user_email = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "git_user_email", GitModel.git_user_email)
-        GitModel.memcache_servers   = Array.wrap gitmodel_config.fetch("gitmodel", nil).try(:fetch, "memcache_servers", nil)
+        servers                 = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "memcache_servers", nil)
+        GitModel.memcache_servers = servers.nil? ? nil : Array.wrap(servers)
         GitModel.memcache_namespace = gitmodel_config.fetch("gitmodel", nil).try(:fetch, "memcache_namespace", GitModel.git_user_email)
       
         GitModel.db_root        = "#{Rails.root.join(GitModel.db_root)}"
